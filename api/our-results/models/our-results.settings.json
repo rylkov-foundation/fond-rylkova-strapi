@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_results",
+  "info": {
+    "name": "Our results"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "results": {
+      "collection": "result"
+    }
+  }
+}
