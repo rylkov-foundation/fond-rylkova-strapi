@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "results",
+  "info": {
+    "name": "Result"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Quantity": {
+      "required": true,
+      "type": "integer"
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
