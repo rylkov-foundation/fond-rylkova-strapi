@@ -2,7 +2,7 @@
   "name": "fond-rylkova-strapi",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "far",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -16,11 +16,9 @@
     "husky": "^6.0.0"
   },
   "dependencies": {
-    "knex": "0.21.18",
-    "sqlite3": "5.0.0",
     "strapi": "3.5.4",
     "strapi-admin": "3.5.4",
-    "strapi-connector-bookshelf": "3.5.4",
+    "strapi-connector-mongoose": "^3.5.4",
     "strapi-plugin-content-manager": "3.5.4",
     "strapi-plugin-content-type-builder": "3.5.4",
     "strapi-plugin-email": "3.5.4",
@@ -29,7 +27,8 @@
     "strapi-utils": "3.5.4"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "FreBeeGo",
+    "email": "freebeego@yandex.ru"
   },
   "strapi": {
     "uuid": "d477fbd8-e95f-4d26-835c-70b44858b609"
