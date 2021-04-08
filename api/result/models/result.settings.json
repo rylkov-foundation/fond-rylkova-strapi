@@ -2,26 +2,42 @@
   "kind": "collectionType",
   "collectionName": "results",
   "info": {
-    "name": "Result"
+    "name": "Result",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
     "draftAndPublish": true,
     "populateCreatorFields": false,
-    "privateAttributes": ["createdAt", "updatedAt", "published_at", "id", "_id", "__v"]
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
   },
   "attributes": {
     "Quantity": {
       "required": true,
       "type": "integer"
     },
-    "Title": {
+    "Title_ru": {
       "type": "string",
       "required": true
     },
-    "Text": {
-      "type": "text",
+    "Title_en": {
+      "type": "string",
+      "required": true
+    },
+    "Text_ru": {
+      "type": "richtext",
+      "required": true
+    },
+    "Text_en": {
+      "type": "richtext",
       "required": true
     }
   }
