@@ -2,12 +2,13 @@
   "collectionName": "components_icon_link_icon_links",
   "info": {
     "name": "Icon link",
-    "icon": "users"
+    "icon": "users",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Icon": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images"
