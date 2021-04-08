@@ -10,11 +10,22 @@
     "timestamps": true,
     "draftAndPublish": true,
     "populateCreatorFields": false,
-    "privateAttributes": ["createdAt", "updatedAt", "published_at", "id", "_id", "__v"]
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
   },
   "attributes": {
-    "Text": {
-      "type": "text",
+    "Text_ru": {
+      "type": "richtext",
+      "required": true
+    },
+    "Text_en": {
+      "type": "richtext",
       "required": true
     }
   }
