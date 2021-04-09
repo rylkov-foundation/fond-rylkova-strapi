@@ -8,16 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true,
-    "populateCreatorFields": false,
-    "privateAttributes": [
-      "createdAt",
-      "updatedAt",
-      "published_at",
-      "id",
-      "_id",
-      "__v"
-    ]
+    "draftAndPublish": true
   },
   "attributes": {
     "Title_ru": {
