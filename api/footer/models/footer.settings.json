@@ -8,10 +8,22 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
   },
   "attributes": {
     "Title_ru": {
+      "type": "string",
+      "required": true
+    },
+    "Title_en": {
       "type": "string",
       "required": true
     },
@@ -24,10 +36,6 @@
       "type": "component",
       "repeatable": false,
       "component": "icon-link.icon-link"
-    },
-    "Title_en": {
-      "type": "string",
-      "required": true
     },
     "Foreign_agent_text_ru": {
       "type": "richtext",

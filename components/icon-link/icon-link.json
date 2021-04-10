@@ -5,7 +5,16 @@
     "icon": "users",
     "description": ""
   },
-  "options": {},
+  "options": {
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
+  },
   "attributes": {
     "Icon": {
       "model": "file",

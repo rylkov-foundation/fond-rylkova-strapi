@@ -8,19 +8,27 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
   },
   "attributes": {
     "Title_ru": {
       "type": "string",
       "required": true
     },
-    "results": {
-      "collection": "result"
-    },
     "Title_en": {
       "type": "string",
       "required": true
+    },
+    "results": {
+      "collection": "result"
     }
   }
 }

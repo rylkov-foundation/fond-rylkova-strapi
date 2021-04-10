@@ -8,7 +8,15 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
   },
   "attributes": {
     "Text_ru": {
