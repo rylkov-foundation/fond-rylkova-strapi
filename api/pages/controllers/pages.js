@@ -9,7 +9,6 @@ const { sanitizeEntity } = require('strapi-utils');
 
 module.exports = {
   async main(ctx) {
-    console.debug(strapi.models)
     return {
       about: sanitizeEntity(await strapi.services.about.find(), { model: strapi.models.about }),
       mission: sanitizeEntity(await strapi.services.mission.find(), { model: strapi.models.mission }),
