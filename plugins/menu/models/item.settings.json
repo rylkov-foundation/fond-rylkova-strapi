@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "name": "MenuItem",
+    "description": "Root menu level."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
+  },
+  "attributes": {
+    "name_ru": {
+      "type": "string",
+      "required": true
+    },
+    "name_en": {
+      "type": "string",
+      "required": true
+    },
+    "page": {
+      "model": "page",
+      "required": false,
+      "unique": true
+    },
+    "order": {
+      "type": "integer",
+      "min": 1,
+      "max": 20,
+      "required": true,
+      "unique": true
+    },
+    "subitems": {
+      "plugin": "menu",
+      "collection": "subitem",
+      "required": false,
+      "unique": true
+    }
+  }
+}

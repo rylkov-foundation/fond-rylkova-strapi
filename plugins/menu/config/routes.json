@@ -2,8 +2,56 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/",
-      "handler": "menu.index",
+      "path": "/items",
+      "handler": "menu.getItems",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/items",
+      "handler": "menu.createItem",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/items/:id",
+      "handler": "menu.updateItem",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/items/:id",
+      "handler": "menu.deleteItem",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/subitems",
+      "handler": "menu.createSubitem",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/subitems/:id",
+      "handler": "menu.updateSubitem",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/subitems/:id",
+      "handler": "menu.deleteSubitem",
       "config": {
         "policies": []
       }

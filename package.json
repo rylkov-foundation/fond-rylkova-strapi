@@ -18,16 +18,16 @@
   "dependencies": {
     "node": "^14.16.1",
     "npm": "^6.14.13",
-    "strapi": "3.6.0",
-    "strapi-admin": "3.6.0",
-    "strapi-connector-mongoose": "^3.6.0",
+    "strapi": "3.6.1",
+    "strapi-admin": "3.6.1",
+    "strapi-connector-mongoose": "^3.6.1",
     "strapi-plugin-ckeditor5": "^1.9.0",
-    "strapi-plugin-content-manager": "3.6.0",
-    "strapi-plugin-content-type-builder": "3.6.0",
-    "strapi-plugin-email": "3.6.0",
-    "strapi-plugin-upload": "3.6.0",
-    "strapi-plugin-users-permissions": "3.6.0",
-    "strapi-utils": "3.6.0"
+    "strapi-plugin-content-manager": "3.6.1",
+    "strapi-plugin-content-type-builder": "3.6.1",
+    "strapi-plugin-email": "3.6.1",
+    "strapi-plugin-upload": "3.6.1",
+    "strapi-plugin-users-permissions": "3.6.1",
+    "strapi-utils": "3.6.1"
   },
   "author": {
     "name": "FreBeeGo",
