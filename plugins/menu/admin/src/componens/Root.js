@@ -14,6 +14,7 @@ const ListItemsElement = styled.ul`
 const Root = () => {
   const [items, setItems] = React.useState([]);
   const [pages, setPages] = React.useState([]);
+  const [isClosed, setIsClosed] = React.useState(false);
 
   React.useEffect(
     () => {
@@ -25,6 +26,21 @@ const Root = () => {
       ;
     },
     []
+  );
+
+  React.useEffect(
+    () => {
+      if(isClosed) {
+      Promise.all([request('/menu/items'), request('/pages')])
+        .then((data) => {
+            setItems(data[0]);
+            setPages(data[1]);
+        });
+        setIsClosed(false);
+      }
+      ;
+    },
+    [isClosed]
   );
 
   function handleDeleteItem(id) {
@@ -105,7 +121,7 @@ const Root = () => {
     }
   }
 
-  function handleSubmitSubitemForm(id, fields, isNewItem, parent) {
+  function handleSubmitSubitemForm(id, fields, isNewItem, parent) {console.log(1);
     if (isNewItem) {
       const parentSubitems = items
         .find((item) => item._id === parent).subitems
@@ -171,6 +187,7 @@ const Root = () => {
             order={Number(item.order)  || 0}
             handleDelete={handleDeleteItem}
             handleSubmit={handleSubmitItemForm}
+            setIsClosed = {setIsClosed}
           >
           {(item.subitems && item.subitems.length) ?
             <ListItemsElement sub>
@@ -187,6 +204,7 @@ const Root = () => {
                   order={Number(subitem.order) || 0}
                   handleDelete={handleDeleteSubitem}
                   handleSubmit={handleSubmitSubitemForm}
+                  setIsClosed={setIsClosed}
                 />
               )}
             </ListItemsElement> : ''}

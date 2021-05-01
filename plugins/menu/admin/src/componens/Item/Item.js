@@ -21,13 +21,19 @@ const EditForm = styled.form`
   flex-direction: column;
   overflow: hidden;
   transition: height .5s ease-out .2s;
-  height: ${props => props.opened ? '150px' : 0};
+  height: ${props => props.opened ? '220px' : 0};
 `;
+
+const FormLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  font-family: Times, serif;
+  font-style: italic;`
 
 const EditFormField = styled.input`
   background: aliceblue;
   height: 2vw;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   
   &:focus {
     margin-bottom: 4px;
@@ -111,7 +117,8 @@ const Item = ({
                 pages,
                 subOf,
                 handleDelete,
-                handleSubmit
+                handleSubmit,
+                setIsClosed,
 }) => {
   const [fields, setFields] = React.useState({ nameRU, nameEN, page, order });
   const [formOpened, setFormOpened] = React.useState(!nameRU && !nameEN && !page && !order);
@@ -138,11 +145,18 @@ const Item = ({
   function handleEditButton(e) {
     e.preventDefault();
     handleSubmit(id, fields, isNewItem, subOf);
-    setFormOpened(false)
+    setFormOpened(false);
+    setIsClosed(false);
   }
 
   function switchForm() {
+    setIsClosed(false);
     setFormOpened(!formOpened);
+  }
+
+  function closeForm() {
+    setFormOpened(!formOpened);
+    setIsClosed(true);
   }
 
   return (
@@ -169,26 +183,30 @@ const Item = ({
           placeholder="Title_EN"
           maxLength={20}
         />
-        <select value={fields.page} onChange={handleOnChange} name="page">
-          <option value="" />
-          {pages.map(page =>
-            <option key={page._id} value={page._id}>
-              {page.name}
-            </option>
-          )}
-        </select>
-        <EditFormField
-          name="order"
-          type="number"
-          value={fields.order}
-          onChange={handleOnChange}
-          placeholder="Order"
-          min={1}
-          max={30}
-        />
+        <FormLabel> Выберите нужную страницу для отображения
+          <select value={fields.page} onChange={handleOnChange} name="page">
+            <option value="" />
+            {pages.map(page =>
+              <option key={page._id} value={page._id}>
+                {page.name}
+              </option>
+            )}
+          </select>
+        </FormLabel>
+        <FormLabel> Номер для сортировки
+          <EditFormField
+            name="order"
+            type="number"
+            value={fields.order}
+            onChange={handleOnChange}
+            placeholder="Order"
+            min={1}
+            max={30}
+          />
+        </FormLabel>
         <FormButtonContainer>
           <EditFormSubmitButton type="submit" disabled={!isSubmitButtonActive} />
-          <CloseFormButton type="button" onClick={switchForm} />
+          <CloseFormButton type="button" onClick={closeForm} />
         </FormButtonContainer>
       </EditForm>
       {children}
