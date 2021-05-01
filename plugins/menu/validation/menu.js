@@ -1,6 +1,6 @@
 const isObjectId = require('mongoose').Types.ObjectId.isValid;
 
-const isNameValid = name => (typeof name === 'string' && name.length >= 3 && name.length <= 30);
+const isNameValid = name => (typeof name === 'string' && name.length >= 1 && name.length <= 20);
 const isOrderValid = order => (typeof order === 'number' && order >= 0 && order <= 30);
 
 const createItemValidation = ctx => {
@@ -13,8 +13,10 @@ const createItemValidation = ctx => {
 };
 
 const updateItemValidation = ctx => {
+  const params = ctx.params;
+  const body = ctx.request.body;
   if (
-    (ctx.params.id && isObjectId(ctx.params.id))
+    (params.id && isObjectId(params.id))
     &&
     (body['name_ru'] || body['name_en'] || body.page || body.order || body.subitems)
   ) {
@@ -42,8 +44,10 @@ const createSubitemValidation = ctx => {
   );
 };
 const updateSubitemValidation = ctx => {
+  const params = ctx.params;
+  const body = ctx.request.body;
   if (
-    (ctx.params.id && isObjectId(ctx.params.id))
+    (params.id && isObjectId(params.id))
     &&
     (body['name_ru'] || body['name_en'] || body.page || body.order)
   ) {

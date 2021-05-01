@@ -9,6 +9,7 @@ const AddButton = styled.button`
   background-color: darkgreen;
   border-radius: 5px;
   font-weight: bold;
+  color: aliceblue;
     
   &:hover {
     opacity: .6;

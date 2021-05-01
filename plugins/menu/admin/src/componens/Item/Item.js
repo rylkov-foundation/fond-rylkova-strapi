@@ -71,10 +71,11 @@ const FaceButton = styled.button`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  opacity: ${props => props.disabled ? '.1' : '1'};
   
   &:hover {
-    opacity: .6;
-    cursor: pointer;
+    opacity: ${props => props.disabled ? '.1' : '.6'};
+    cursor: ${props => props.disabled ? 'unset' : 'pointer'};
   }
 `;
 
@@ -82,7 +83,7 @@ const EditFormSubmitButton = styled(FaceButton)`
   background-image: url(${confirmIcon});
   background-color: burlywood;
   border-radius: 12px;
-  height: 2vw;
+  height: 25px;
   width: 40%;
   margin: 5px auto 0;
 `;
@@ -101,17 +102,31 @@ const FaceDeleteButton = styled(FaceButton)`
 
 const Item = ({
                 id,
+                isNewItem,
                 nameRU,
                 nameEN,
                 page,
                 order,
                 children,
                 pages,
-                sub,
-                handleDelete
+                subOf,
+                handleDelete,
+                handleSubmit
 }) => {
   const [fields, setFields] = React.useState({ nameRU, nameEN, page, order });
-  const [formOpened, setFormOpened] = React.useState(false);
+  const [formOpened, setFormOpened] = React.useState(!nameRU && !nameEN && !page && !order);
+  const [isSubmitButtonActive, setIsSubmitButtonActive] = React.useState(false);
+
+  React.useEffect(
+    () => {
+      if (!fields.nameRU || !fields.nameEN || !fields.order) {
+        setIsSubmitButtonActive(false);
+      } else {
+        setIsSubmitButtonActive(true);
+      }
+    },
+    [fields]
+  );
 
   function handleOnChange(e) {
     setFields({
@@ -120,13 +135,10 @@ const Item = ({
     });
   }
 
-  function handleSubmit(e) {
+  function handleEditButton(e) {
     e.preventDefault();
-    console.log('submit');
-  }
-
-  function handleDelete(e) {
-
+    handleSubmit(id, fields, isNewItem, subOf);
+    setFormOpened(false)
   }
 
   function switchForm() {
@@ -138,15 +150,16 @@ const Item = ({
       <Face hide={formOpened}>
         <FaceName>{fields.nameRU}</FaceName>
         <FaceEditButton onClick={switchForm} />
-        <FaceDeleteButton />
+        <FaceDeleteButton onClick={() => handleDelete(id, subOf)} />
       </Face>
-      <EditForm opened={formOpened} onSubmit={handleSubmit}>
+      <EditForm opened={formOpened} onSubmit={handleEditButton}>
         <EditFormField
           name="nameRU"
           type="text"
           value={fields.nameRU}
           onChange={handleOnChange}
           placeholder="Title_RU"
+          maxLength={20}
         />
         <EditFormField
           name="nameEN"
@@ -154,10 +167,12 @@ const Item = ({
           value={fields.nameEN}
           onChange={handleOnChange}
           placeholder="Title_EN"
+          maxLength={20}
         />
         <select value={fields.page} onChange={handleOnChange} name="page">
+          <option value="" />
           {pages.map(page =>
-            <option key={page._id} value={page._id} /*selected={page._id === id}*/>
+            <option key={page._id} value={page._id}>
               {page.name}
             </option>
           )}
@@ -168,13 +183,15 @@ const Item = ({
           value={fields.order}
           onChange={handleOnChange}
           placeholder="Order"
+          min={1}
+          max={30}
         />
         <FormButtonContainer>
-          <EditFormSubmitButton type="submit" />
+          <EditFormSubmitButton type="submit" disabled={!isSubmitButtonActive} />
           <CloseFormButton type="button" onClick={switchForm} />
         </FormButtonContainer>
       </EditForm>
-      {children && children}
+      {children}
     </ItemElement>
   );
 };

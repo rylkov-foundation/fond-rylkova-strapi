@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 // import PropTypes from 'prop-types';
 import pluginId from '../../pluginId';
 import styled from 'styled-components';
-// import { useGlobalContext, useStrapi, request } from 'strapi-helper-plugin';
 import Root from '../../componens/Root';
 
 const Wrapper = styled.div`

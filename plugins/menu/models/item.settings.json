@@ -21,11 +21,15 @@
   "attributes": {
     "name_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "min": 1,
+      "max": 20
     },
     "name_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "min": 1,
+      "max": 20
     },
     "page": {
       "model": "page",
@@ -34,10 +38,9 @@
     },
     "order": {
       "type": "integer",
-      "min": 1,
-      "max": 20,
-      "required": true,
-      "unique": true
+      "min": 0,
+      "max": 30,
+      "required": true
     },
     "subitems": {
       "plugin": "menu",
