@@ -46,6 +46,11 @@ const EditFormField = styled.input`
   }
 `;
 
+const FormSelect = styled.select `
+  background: aliceblue;
+  height: 2vw;
+`
+
 const Face = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -146,17 +151,16 @@ const Item = ({
     e.preventDefault();
     handleSubmit(id, fields, isNewItem, subOf);
     setFormOpened(false);
-    setIsClosed(false);
+    setIsClosed(true);
   }
 
   function switchForm() {
-    setIsClosed(false);
     setFormOpened(!formOpened);
   }
 
   function closeForm() {
     setFormOpened(!formOpened);
-    setIsClosed(true);
+    setIsClosed(false);
   }
 
   return (
@@ -184,14 +188,14 @@ const Item = ({
           maxLength={20}
         />
         <FormLabel> Выберите нужную страницу для отображения
-          <select value={fields.page} onChange={handleOnChange} name="page">
+          <FormSelect value={fields.page} onChange={handleOnChange} name="page">
             <option value="" />
             {pages.map(page =>
               <option key={page._id} value={page._id}>
                 {page.name}
               </option>
             )}
-          </select>
+          </FormSelect>
         </FormLabel>
         <FormLabel> Номер для сортировки
           <EditFormField

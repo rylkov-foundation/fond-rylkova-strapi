@@ -14,7 +14,7 @@ const ListItemsElement = styled.ul`
 const Root = () => {
   const [items, setItems] = React.useState([]);
   const [pages, setPages] = React.useState([]);
-  const [isClosed, setIsClosed] = React.useState(false);
+  const [isClosed, setIsClosed] = React.useState(true);
 
   React.useEffect(
     () => {
@@ -30,13 +30,13 @@ const Root = () => {
 
   React.useEffect(
     () => {
-      if(isClosed) {
+      if(!isClosed) {
       Promise.all([request('/menu/items'), request('/pages')])
         .then((data) => {
             setItems(data[0]);
             setPages(data[1]);
         });
-        setIsClosed(false);
+        setIsClosed(true);
       }
       ;
     },
@@ -208,10 +208,10 @@ const Root = () => {
                 />
               )}
             </ListItemsElement> : ''}
-          <AddItemButton onClick={() => handleAddSubitem(item._id)} sub />
+          <AddItemButton onClick={() => handleAddSubitem(item._id)} sub isClosed={isClosed}/>
         </Item>)}
       </ListItemsElement>
-      <AddItemButton onClick={handleAddItem} />
+      <AddItemButton onClick={handleAddItem} isClosed={isClosed}/>
     </>
   );
 }
