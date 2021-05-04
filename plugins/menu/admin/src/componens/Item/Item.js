@@ -191,7 +191,7 @@ const Item = ({
           maxLength={20}
         />
         <FormLabel> Выберите нужную страницу для отображения
-          <FormSelect value={fields.page} onChange={handleOnChange} name="page">
+          <FormSelect onChange={handleOnChange} name="page">
             <option value="" />
             {pages.map(page =>
               <option key={page._id} value={page._id}>
