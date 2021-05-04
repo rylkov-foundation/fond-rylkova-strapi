@@ -123,7 +123,7 @@ const Item = ({
                 subOf,
                 handleDelete,
                 handleSubmit,
-                setIsClosed,
+                deleteNewItem
 }) => {
   const [fields, setFields] = React.useState({ nameRU, nameEN, page, order });
   const [formOpened, setFormOpened] = React.useState(!nameRU && !nameEN && !page && !order);
@@ -151,7 +151,6 @@ const Item = ({
     e.preventDefault();
     handleSubmit(id, fields, isNewItem, subOf);
     setFormOpened(false);
-    setIsClosed(true);
   }
 
   function switchForm() {
@@ -159,8 +158,12 @@ const Item = ({
   }
 
   function closeForm() {
-    setFormOpened(!formOpened);
-    setIsClosed(false);
+    if (isNewItem) {
+      deleteNewItem(id, subOf);
+    } else {
+      setFormOpened(!formOpened);
+      setFields({ nameRU, nameEN, page, order });
+    }
   }
 
   return (

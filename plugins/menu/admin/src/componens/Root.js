@@ -28,21 +28,6 @@ const Root = () => {
     []
   );
 
-  React.useEffect(
-    () => {
-      if(!isClosed) {
-      Promise.all([request('/menu/items'), request('/pages')])
-        .then((data) => {
-            setItems(data[0]);
-            setPages(data[1]);
-        });
-        setIsClosed(true);
-      }
-      ;
-    },
-    [isClosed]
-  );
-
   function handleDeleteItem(id) {
     request(`/menu/items/${id}`, { method: 'DELETE' }).then(() => setItems(items.filter((item) => item._id !== id)));
   }
@@ -78,7 +63,7 @@ const Root = () => {
           editedItem = item;
           editedItem.subitems = [
             ...editedItem.subitems,
-            { _id: String(Math.random() * (100 - 1) + 1), newItem: true }
+            { _id: String(Math.random() * (1000 - 1) + 1), newItem: true }
           ];
           return editedItem;
         } else {
@@ -121,7 +106,7 @@ const Root = () => {
     }
   }
 
-  function handleSubmitSubitemForm(id, fields, isNewItem, parent) {console.log(1);
+  function handleSubmitSubitemForm(id, fields, isNewItem, parent) {
     if (isNewItem) {
       const parentSubitems = items
         .find((item) => item._id === parent).subitems
@@ -172,6 +157,16 @@ const Root = () => {
     }
   }
 
+  function deleteNewItem(id, parent) {
+    if (!parent) {
+      setItems(items.filter((item) => !item.newItem));
+    } else {
+      const currentItem = items.find((items) => items._id === parent);
+      currentItem.subitems = currentItem.subitems.filter((item) => !item.newItem);
+      setItems(items.map((item) => item._id === parent ? currentItem : item));
+    }
+  }
+
   return (
     <>
       <ListItemsElement>
@@ -188,6 +183,7 @@ const Root = () => {
             handleDelete={handleDeleteItem}
             handleSubmit={handleSubmitItemForm}
             setIsClosed = {setIsClosed}
+            deleteNewItem={deleteNewItem}
           >
           {(item.subitems && item.subitems.length) ?
             <ListItemsElement sub>
@@ -205,6 +201,7 @@ const Root = () => {
                   handleDelete={handleDeleteSubitem}
                   handleSubmit={handleSubmitSubitemForm}
                   setIsClosed={setIsClosed}
+                  deleteNewItem={deleteNewItem}
                 />
               )}
             </ListItemsElement> : ''}
