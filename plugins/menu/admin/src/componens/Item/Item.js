@@ -21,7 +21,7 @@ const EditForm = styled.form`
   flex-direction: column;
   overflow: hidden;
   transition: height .5s ease-out .2s;
-  height: ${props => props.opened ? '220px' : 0};
+  height: ${props => props.opened ? '270px' : 0};
 `;
 
 const FormLabel = styled.label`
@@ -174,6 +174,7 @@ const Item = ({
         <FaceDeleteButton onClick={() => handleDelete(id, subOf)} />
       </Face>
       <EditForm opened={formOpened} onSubmit={handleEditButton}>
+        <FormLabel> Название пункта меню (русский)
         <EditFormField
           name="nameRU"
           type="text"
@@ -182,14 +183,17 @@ const Item = ({
           placeholder="Title_RU"
           maxLength={20}
         />
-        <EditFormField
-          name="nameEN"
-          type="text"
-          value={fields.nameEN}
-          onChange={handleOnChange}
-          placeholder="Title_EN"
-          maxLength={20}
-        />
+        </FormLabel>
+        <FormLabel>Название пункта меню (английский)
+          <EditFormField
+            name="nameEN"
+            type="text"
+            value={fields.nameEN}
+            onChange={handleOnChange}
+            placeholder="Title_EN"
+            maxLength={20}
+          />
+        </FormLabel>
         <FormLabel> Выберите нужную страницу для отображения
           <FormSelect onChange={handleOnChange} name="page">
             <option value="" />
