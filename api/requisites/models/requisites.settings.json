@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "requisites",
+  "info": {
+    "name": "Requisites"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "company_name": {
+      "type": "string",
+      "required": true
+    },
+    "company_short_name": {
+      "type": "string",
+      "required": true
+    },
+    "inn": {
+      "type": "integer",
+      "required": true
+    },
+    "kpp": {
+      "type": "integer",
+      "required": true
+    },
+    "bank": {
+      "type": "string",
+      "required": true
+    },
+    "ogrn": {
+      "type": "integer",
+      "required": true
+    },
+    "bik": {
+      "type": "integer",
+      "required": true
+    },
+    "correspondent_account": {
+      "type": "integer",
+      "required": true
+    },
+    "purpose_ru": {
+      "type": "string",
+      "required": true
+    },
+    "purpose_en": {
+      "type": "string",
+      "required": true
+    },
+    "bank_account": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/team_members",
+      "handler": "team_member.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

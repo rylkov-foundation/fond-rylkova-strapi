@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/contacts_items",
+      "handler": "contacts_item.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

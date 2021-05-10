@@ -1,38 +1,51 @@
 {
   "kind": "singleType",
-  "collectionName": "missions",
+  "collectionName": "mission",
   "info": {
-    "name": "Mission",
-    "description": ""
+    "name": "Mission"
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true,
-    "privateAttributes": [
-      "createdAt",
-      "updatedAt",
-      "published_at",
-      "id",
-      "_id",
-      "__v"
-    ]
+    "draftAndPublish": true
   },
   "attributes": {
-    "Title_ru": {
+    "title_ru": {
       "type": "string",
       "required": true
     },
-    "Title_en": {
+    "title_en": {
       "type": "string",
       "required": true
     },
-    "Text_ru": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "content_ru": {
       "type": "richtext",
       "required": true
     },
-    "Text_en": {
+    "content_en": {
       "type": "richtext",
+      "required": true
+    },
+    "Keywords": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "og_description": {
+      "type": "string",
       "required": true
     }
   }

@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "meta",
+  "info": {
+    "name": "Meta"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "favicon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "site_name": {
+      "type": "string",
+      "required": true
+    },
+    "Keywords": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "og_description": {
+      "type": "string",
+      "required": true
+    },
+    "og_url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

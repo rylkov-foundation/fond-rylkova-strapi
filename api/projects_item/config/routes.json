@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/projects_items",
+      "handler": "projects_item.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

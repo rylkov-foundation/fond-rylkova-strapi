@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "popup_cookies",
+  "info": {
+    "name": "Popup cookies"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true
+    },
+    "title_en": {
+      "type": "string",
+      "required": true
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true
+    },
+    "description_en": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

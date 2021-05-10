@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "who_is_andrei_rylkovs",
+  "info": {
+    "name": "Who is Andrei Rylkov"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true
+    },
+    "title_en": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "content_ru": {
+      "type": "richtext",
+      "required": true
+    },
+    "content_en": {
+      "type": "richtext",
+      "required": true
+    },
+    "Keywords": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "og_description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

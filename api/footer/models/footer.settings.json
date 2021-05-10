@@ -19,38 +19,33 @@
     ]
   },
   "attributes": {
-    "Title_ru": {
+    "title_ru": {
       "type": "string",
       "required": true
     },
-    "Title_en": {
+    "title_en": {
       "type": "string",
       "required": true
     },
-    "Social_links": {
+    "social_links": {
       "type": "component",
       "repeatable": true,
       "component": "icon-link.icon-link"
     },
-    "Foreign_agent_link": {
-      "type": "component",
-      "repeatable": false,
-      "component": "icon-link.icon-link"
-    },
-    "Foreign_agent_text_ru": {
-      "type": "richtext",
+    "foreign_agent_text_ru": {
+      "type": "text",
       "required": true
     },
-    "Foreign_agent_text_en": {
-      "type": "richtext",
+    "foreign_agent_text_en": {
+      "type": "text",
       "required": true
     },
-    "License_text_ru": {
-      "type": "richtext",
+    "license_text_ru": {
+      "type": "text",
       "required": true
     },
-    "License_text_en": {
-      "type": "richtext",
+    "license_text_en": {
+      "type": "text",
       "required": true
     }
   }

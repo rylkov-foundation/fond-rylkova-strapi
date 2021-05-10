@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "annual_reports",
+  "info": {
+    "name": "Annual reports"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true
+    },
+    "title_en": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true
+    },
+    "description_en": {
+      "type": "text",
+      "required": true
+    },
+    "Keywords": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "og_description": {
+      "type": "string",
+      "required": true
+    },
+    "reports": {
+      "collection": "report"
+    }
+  }
+}

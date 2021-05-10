@@ -1,0 +1,62 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "name": "Contacts"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true
+    },
+    "title_en": {
+      "type": "string",
+      "required": true
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true
+    },
+    "description_en": {
+      "type": "text",
+      "required": true
+    },
+    "phone_number": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\+7-\\([\\d]{3,4}\\)-[\\d]{2,3}-[\\d]{2}-[\\d]{2}$"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "text_ru": {
+      "type": "text",
+      "required": true
+    },
+    "text_en": {
+      "type": "text",
+      "required": true
+    },
+    "Keywords": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "og_description": {
+      "type": "string",
+      "required": true
+    },
+    "contacts_items": {
+      "collection": "contacts_item"
+    }
+  }
+}

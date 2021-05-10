@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/who-is-andrei-rylkov",
+      "handler": "who-is-andrei-rylkov.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

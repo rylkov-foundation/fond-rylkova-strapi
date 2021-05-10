@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_member",
+  "info": {
+    "name": "Team member"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name_ru": {
+      "type": "string",
+      "required": true
+    },
+    "name_en": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true
+    },
+    "description_en": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

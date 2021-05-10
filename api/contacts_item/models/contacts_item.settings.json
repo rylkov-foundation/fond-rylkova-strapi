@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts_item",
+  "info": {
+    "name": "Contacts item",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
+  },
+  "attributes": {
+    "name_ru": {
+      "type": "string",
+      "required": true
+    },
+    "name_en": {
+      "type": "string",
+      "required": true
+    },
+    "position_ru": {
+      "type": "string",
+      "required": true
+    },
+    "position_en": {
+      "type": "string",
+      "required": true
+    },
+    "phone_number": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\+7-\\([\\d]{3,4}\\)-[\\d]{2,3}-[\\d]{2}-[\\d]{2}$"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}

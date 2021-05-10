@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/annual_reports",
+      "handler": "annual_reports.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

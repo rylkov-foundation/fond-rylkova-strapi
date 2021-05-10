@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/popup_news",
+      "handler": "popup_news.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

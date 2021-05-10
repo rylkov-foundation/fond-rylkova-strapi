@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "donation_need_help",
+  "info": {
+    "name": "Donation need help"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true
+    },
+    "title_en": {
+      "type": "string",
+      "required": true
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true
+    },
+    "description_en": {
+      "type": "text",
+      "required": true
+    },
+    "qr_code": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}
