@@ -10,14 +10,6 @@ const {
 } = require('../validation/menu');
 
 module.exports = {
-  /*index: async (ctx) => {
-    // Add your own logic here.
-    // Send 200 `ok`
-    ctx.send({
-      message: 'ok',
-    });
-  },*/
-
   getItems: async (ctx) => {
     const items = await strapi.query('item', 'menu').model.find().populate('subitems');
     ctx.send(items);

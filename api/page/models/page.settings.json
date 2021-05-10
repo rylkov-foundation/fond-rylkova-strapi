@@ -10,13 +10,54 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "title_ru": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "content": {
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "subtitle_ru": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "subtitle_en": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "content_ru": {
       "type": "richtext",
+      "required": true
+    },
+    "content_en": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "Keywords": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "og_description": {
+      "type": "string",
       "required": true
     }
   }

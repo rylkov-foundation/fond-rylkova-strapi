@@ -199,7 +199,7 @@ const Item = ({
             <option value="" />
             {pages.map(page =>
               <option key={page._id} value={page._id}>
-                {page.name}
+                {page.title_ru}
               </option>
             )}
           </FormSelect>
