@@ -21,19 +21,23 @@
   "attributes": {
     "name_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 30
     },
     "name_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 30
     },
     "position_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 18
     },
     "position_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 18
     },
     "phone_number": {
       "type": "string",

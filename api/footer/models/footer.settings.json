@@ -21,11 +21,13 @@
   "attributes": {
     "title_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 13
     },
     "title_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 13
     },
     "social_links": {
       "type": "component",
@@ -34,19 +36,23 @@
     },
     "foreign_agent_text_ru": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 136
     },
     "foreign_agent_text_en": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 136
     },
     "license_text_ru": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 125
     },
     "license_text_en": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 125
     }
   }
 }

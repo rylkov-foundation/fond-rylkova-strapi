@@ -20,11 +20,15 @@
     },
     "inn": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 10,
+      "max": 10
     },
     "kpp": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 9,
+      "max": 9
     },
     "bank": {
       "type": "string",
@@ -32,27 +36,37 @@
     },
     "ogrn": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 13,
+      "max": 13
     },
     "bik": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 9,
+      "max": 9
     },
     "correspondent_account": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 20,
+      "max": 20
     },
     "purpose_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 210
     },
     "purpose_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 210
     },
     "bank_account": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 20,
+      "max": 20
     }
   }
 }

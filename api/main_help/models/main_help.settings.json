@@ -21,11 +21,13 @@
   "attributes": {
     "title_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 15
     },
     "title_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 15
     },
     "phone_number": {
       "type": "string",
@@ -38,11 +40,13 @@
     },
     "description_ru": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 165
     },
     "description_en": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 165
     }
   }
 }

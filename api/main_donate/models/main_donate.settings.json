@@ -12,11 +12,13 @@
   "attributes": {
     "title_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 15
     },
     "title_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 15
     }
   }
 }

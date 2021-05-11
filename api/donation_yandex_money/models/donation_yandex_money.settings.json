@@ -12,19 +12,23 @@
   "attributes": {
     "title_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 13
     },
     "title_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 13
     },
     "description_ru": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 169
     },
     "description_en": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 169
     }
   }
 }

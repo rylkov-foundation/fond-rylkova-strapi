@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "who_is_andrei_rylkovs",
   "info": {
-    "name": "Who is Andrei Rylkov"
+    "name": "Who is Andrei Rylkov",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,11 +13,13 @@
   "attributes": {
     "title_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 24
     },
     "title_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 24
     },
     "image": {
       "model": "file",

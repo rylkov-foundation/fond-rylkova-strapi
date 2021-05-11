@@ -22,14 +22,14 @@
     "name_ru": {
       "type": "string",
       "required": true,
-      "min": 1,
-      "max": 20
+      "minLength": 1,
+      "maxLength": 24
     },
     "name_en": {
       "type": "string",
       "required": true,
-      "min": 1,
-      "max": 20
+      "minLength": 1,
+      "maxLength": 24
     },
     "page": {
       "model": "page",

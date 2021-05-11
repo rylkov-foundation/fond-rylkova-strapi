@@ -12,15 +12,18 @@
   "attributes": {
     "amount_small": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 50
     },
     "amount_medium": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 100
     },
     "amount_big": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 500
     }
   }
 }

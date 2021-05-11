@@ -12,11 +12,13 @@
   "attributes": {
     "name_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 19
     },
     "name_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 19
     },
     "photo": {
       "model": "file",
@@ -30,11 +32,13 @@
     },
     "description_ru": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 320
     },
     "description_en": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 320
     }
   }
 }

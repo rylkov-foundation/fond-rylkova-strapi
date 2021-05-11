@@ -12,19 +12,23 @@
   "attributes": {
     "title_ru": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 8
     },
     "title_en": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 8
     },
     "description_ru": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 135
     },
     "description_en": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 135
     },
     "phone_number": {
       "type": "string",
