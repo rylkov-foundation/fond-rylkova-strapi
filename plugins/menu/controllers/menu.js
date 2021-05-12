@@ -1,5 +1,8 @@
 'use strict';
 
+const permanentPages = require('../constants/permanentPages');
+const slugify = require('slugify');
+
 const {
   createItemValidation,
   updateItemValidation,
@@ -18,8 +21,16 @@ module.exports = {
   createItem: async (ctx) => {
     if (!createItemValidation(ctx)) ctx.send({ error: 'validation error' });
     const { name_ru, name_en, page, order } = ctx.request.body;
-    const newItem = { name_ru, name_en, order, subitems: [] };
-    if (page) newItem.page = page;
+    const newItem = {
+      name_ru,
+      name_en,
+      order,
+      subitems: []
+    };
+    if (page) {
+      newItem.pageDataPath = page;
+      newItem.url = permanentPages.includes(page) ? page : slugify(name_en);
+    }
     const createdItem = await strapi.query('item', 'menu').model.create(newItem);
     ctx.send(createdItem);
   },
@@ -32,13 +43,26 @@ module.exports = {
     if (!page) {
       updatedItem = await strapi.query('item', 'menu').model.findByIdAndUpdate(
         id,
-        { $unset: { page: '' }, name_ru, name_en, order, subitems },
+        {
+          $unset: { pageDataPath: '', url: '' },
+          name_ru,
+          name_en,
+          order,
+          subitems
+        },
         { new: true }
       ).populate('subitems');
     } else {
       updatedItem = await strapi.query('item', 'menu').model.findByIdAndUpdate(
         id,
-        { name_ru, name_en, order, subitems, page },
+        {
+          name_ru,
+          name_en,
+          order,
+          subitems,
+          pageDataPath: page,
+          url: permanentPages.includes(page) ? page : slugify(name_en)
+        },
         { new: true }
       ).populate('subitems');
     }
@@ -56,7 +80,10 @@ module.exports = {
     if (!createSubitemValidation(ctx)) ctx.send({ error: 'validation error' });
     const { name_ru, name_en, page, order, parent, parent_subitems } = ctx.request.body;
     const newSubitem = { name_ru, name_en, order };
-    if (page) newSubitem.page = page;
+    if (page) {
+      newSubitem.pageDataPath = page;
+      newSubitem.url = permanentPages.includes(page) ? page : slugify(name_en);
+    }
     const createdSubitem = await strapi.query('subitem', 'menu').model.create(newSubitem);
     const updatedItem = await strapi.query('item', 'menu').model.findByIdAndUpdate(
       parent,
@@ -74,13 +101,24 @@ module.exports = {
     if (!page) {
       updatedSubitem = await strapi.query('subitem', 'menu').model.findByIdAndUpdate(
         id,
-        { $unset: { page: '' }, name_ru, name_en, order },
+        {
+          $unset: { pageDataPath: '', url: '' },
+          name_ru,
+          name_en,
+          order
+        },
         { new: true }
       );
     } else {
       updatedSubitem = await strapi.query('subitem', 'menu').model.findByIdAndUpdate(
         id,
-        { name_ru, name_en, order, page },
+        {
+          name_ru,
+          name_en,
+          order,
+          pageDataPath: page,
+          url: permanentPages.includes(page) ? page : slugify(name_en)
+        },
         { new: true }
       );
     }

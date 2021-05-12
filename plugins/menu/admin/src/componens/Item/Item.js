@@ -4,6 +4,7 @@ import confirmIcon from '../../images/confirm.svg';
 import editIcon from '../../images/edit.svg';
 import deleteIcon from '../../images/delete.svg';
 import crossIcon from '../../images/cross.svg';
+const permanentPages = require('../../../../constants/permanentPages');
 
 const ItemElement = styled.li`
   display: flex;
@@ -21,7 +22,7 @@ const EditForm = styled.form`
   flex-direction: column;
   overflow: hidden;
   transition: height .5s ease-out .2s;
-  height: ${props => props.opened ? '270px' : 0};
+  height: ${props => props.opened ? '350px' : 0};
 `;
 
 const FormLabel = styled.label`
@@ -197,10 +198,19 @@ const Item = ({
         <FormLabel> Выберите нужную страницу для отображения
           <FormSelect value={fields.page} onChange={handleOnChange} name="page">
             <option value="" />
+            <optgroup label='Уникальный макет'>
+              {permanentPages.map(page =>
+                <option key={page} value={page}>
+                  {page}
+                </option>
+              )}
+            </optgroup>
             {pages.map(page =>
-              <option key={page._id} value={page._id}>
-                {page.title_ru}
-              </option>
+              <optgroup key={page._id} label='Метамакет'>
+                <option value={page._id}>
+                  {page.title_ru}
+                </option>
+              </optgroup>
             )}
           </FormSelect>
         </FormLabel>

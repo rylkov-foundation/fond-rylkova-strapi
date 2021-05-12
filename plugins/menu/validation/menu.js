@@ -6,9 +6,9 @@ const isOrderValid = order => (typeof order === 'number' && order >= 0 && order 
 const createItemValidation = ctx => {
   const body = ctx.request.body;
   return (
-    body['name_ru'] && body['name_en'] && body.page && body.order && body.subitems &&
-    isNameValid(body['name_ru']) && isNameValid(body['name_en']) && isObjectId(body.page) &&
-    isOrderValid(body.order) && Array.isArray(body.subitems) /* check subitems */
+    body['name_ru'] && body['name_en'] && body.order && body.subitems &&
+    isNameValid(body['name_ru']) && isNameValid(body['name_en']) &&
+    isOrderValid(body.order) && Array.isArray(body.subitems)
   );
 };
 
@@ -25,8 +25,6 @@ const updateItemValidation = ctx => {
       ||
       (body['name_en']  && !isNameValid(body['name_en']))
       ||
-      (body.page && !isObjectId(body.page))
-      ||
       (body.order && !isOrderValid(body.order))
       ||
       (body.subitems && !Array.isArray(body.subitems) /* check subitems */)
@@ -39,8 +37,8 @@ const deleteItemValidation = ctx => (ctx.params.id && isObjectId(ctx.params.id))
 const createSubitemValidation = ctx => {
   const body = ctx.request.body;
   return (
-    body['name_ru'] && body['name_en'] && body.page && body.order &&
-    isNameValid(body['name_ru']) && isNameValid(body['name_en']) && isObjectId(body.page) && isOrderValid(body.order)
+    body['name_ru'] && body['name_en'] && body.order &&
+    isNameValid(body['name_ru']) && isNameValid(body['name_en']) && isOrderValid(body.order)
   );
 };
 const updateSubitemValidation = ctx => {
@@ -55,8 +53,6 @@ const updateSubitemValidation = ctx => {
       (body['name_ru'] && !isNameValid(body['name_ru']))
       ||
       (body['name_en']  && !isNameValid(body['name_en']))
-      ||
-      (body.page && !isObjectId(body.page))
       ||
       (body.order && !isOrderValid(body.order))
     )

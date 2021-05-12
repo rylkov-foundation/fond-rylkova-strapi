@@ -170,14 +170,14 @@ const Root = () => {
   return (
     <>
       <ListItemsElement>
-        {items.length && items.sort((a,b) => a.order - b.order).map(item =>
+        {items.length ? items.sort((a,b) => a.order - b.order).map(item =>
           <Item
             key={item._id}
             id={item._id}
             isNewItem={Boolean(item.newItem)}
             nameRU={item.name_ru || ''}
             nameEN={item.name_en || ''}
-            page={item.page || ''}
+            page={item.pageDataPath || ''}
             pages={pages}
             order={Number(item.order)  || 0}
             handleDelete={handleDeleteItem}
@@ -195,7 +195,7 @@ const Root = () => {
                   isNewItem={Boolean(subitem.newItem)}
                   nameRU={subitem.name_ru || ''}
                   nameEN={subitem.name_en || ''}
-                  page={subitem.page || ''}
+                  page={subitem.pageDataPath || ''}
                   pages={pages}
                   order={Number(subitem.order) || 0}
                   handleDelete={handleDeleteSubitem}
@@ -206,7 +206,7 @@ const Root = () => {
               )}
             </ListItemsElement> : ''}
           <AddItemButton onClick={() => handleAddSubitem(item._id)} sub isClosed={isClosed}/>
-        </Item>)}
+        </Item>) : ''}
       </ListItemsElement>
       <AddItemButton onClick={handleAddItem} isClosed={isClosed}/>
     </>

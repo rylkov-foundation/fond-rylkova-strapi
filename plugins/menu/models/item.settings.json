@@ -31,10 +31,13 @@
       "minLength": 1,
       "maxLength": 15
     },
-    "page": {
-      "model": "page",
-      "required": false,
-      "unique": true
+    "pageDataPath": {
+      "type": "string",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": false
     },
     "order": {
       "type": "integer",

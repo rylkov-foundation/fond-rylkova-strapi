@@ -8,7 +8,10 @@
     "description": "Description of menu plugin."
   },
   "dependencies": {
-    "mongoose": "^5.12.7"
+
+  },
+  "devDependencies": {
+
   },
   "author": {
     "name": "A Strapi developer",
