@@ -150,7 +150,9 @@ const Item = ({
 
   function handleEditButton(e) {
     e.preventDefault();
-    handleSubmit(id, fields, isNewItem, subOf);
+    const url = permanentPages.includes(fields.page) ?
+      fields.page : fields.page ? pages.find((page) => page._id === fields.page).slug : '';
+    handleSubmit(id, fields, url, isNewItem, subOf);
     setFormOpened(false);
   }
 

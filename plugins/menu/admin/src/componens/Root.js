@@ -73,7 +73,7 @@ const Root = () => {
     );
   }
 
-  function handleSubmitItemForm(id, fields, isNewItem) {
+  function handleSubmitItemForm(id, fields, url, isNewItem) {
     if (isNewItem) {
       return request(
         '/menu/items',
@@ -83,7 +83,8 @@ const Root = () => {
             name_ru: fields.nameRU,
             name_en: fields.nameEN,
             page: fields.page,
-            order: fields.order
+            order: fields.order,
+            url
           }
         }
       )
@@ -98,6 +99,7 @@ const Root = () => {
             name_en: fields.nameEN,
             page: fields.page,
             order: fields.order,
+            url,
             subitems: items.find((item) => item._id === id).subitems.map((subitem) => subitem._id)
           }
         }
@@ -106,7 +108,8 @@ const Root = () => {
     }
   }
 
-  function handleSubmitSubitemForm(id, fields, isNewItem, parent) {
+  function handleSubmitSubitemForm(id, fields, url, isNewItem, parent) {
+    console.log(url)
     if (isNewItem) {
       const parentSubitems = items
         .find((item) => item._id === parent).subitems
@@ -121,6 +124,7 @@ const Root = () => {
             name_en: fields.nameEN,
             page: fields.page,
             order: fields.order,
+            url,
             parent,
             parent_subitems: parentSubitems
           }
@@ -136,7 +140,8 @@ const Root = () => {
             name_ru: fields.nameRU,
             name_en: fields.nameEN,
             page: fields.page,
-            order: fields.order
+            order: fields.order,
+            url
           }
         }
       )
