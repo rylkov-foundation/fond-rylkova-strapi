@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "pages",
   "info": {
-    "name": "Page"
+    "name": "Page",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -59,6 +60,11 @@
     "og_description": {
       "type": "string",
       "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
