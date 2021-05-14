@@ -8,13 +8,16 @@ const { sanitizeEntity } = require('strapi-utils');
  */
 
 module.exports = {
-  async main(ctx) {
+  async index(ctx) {
     return {
-      about: sanitizeEntity(await strapi.services.about.find(), { model: strapi.models.about }),
-      mission: sanitizeEntity(await strapi.services.mission.find(), { model: strapi.models.mission }),
-      results: sanitizeEntity(await strapi.services['our-results'].find(),{ model: strapi.models['our-results'] }),
-      help: sanitizeEntity(await strapi.services.help.find(), { model: strapi.models.help }),
-      footer: sanitizeEntity( await strapi.services.footer.find(),{ model: strapi.models.footer })
+      about: sanitizeEntity(await strapi.services.main.find(), { model: strapi.models.main }),
+      mission: sanitizeEntity(await strapi.services.main_mission.find(), { model: strapi.models.main_mission }),
+      results: sanitizeEntity(
+        await strapi.services.main_our_results.find(),
+        { model: strapi.models.main_our_results }
+      ),
+      help: sanitizeEntity(await strapi.services.main_help.find(), { model: strapi.models.main_help }),
+      donate: sanitizeEntity(await strapi.services.main_donate.find(), { model: strapi.models.main_donate }),
     };
-  },
+  }
 };

@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/pages/main",
-      "handler": "page.main",
+      "path": "/index",
+      "handler": "page.index",
       "config": {
         "policies": []
       }

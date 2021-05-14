@@ -2,8 +2,8 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/who-is-andrei-rylkov",
-      "handler": "who-is-andrei-rylkov.find",
+      "path": "/who_is_andrei_rylkov",
+      "handler": "who_is_andrei_rylkov.find",
       "config": {
         "policies": []
       }

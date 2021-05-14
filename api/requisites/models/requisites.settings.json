@@ -19,38 +19,38 @@
       "required": true
     },
     "inn": {
-      "type": "integer",
+      "type": "string",
       "required": true,
-      "min": 10,
-      "max": 10
+      "minLength": 10,
+      "maxLength": 10
     },
     "kpp": {
-      "type": "integer",
+      "type": "string",
       "required": true,
-      "min": 9,
-      "max": 9
+      "minLength": 9,
+      "maxLength": 9
     },
     "bank": {
       "type": "string",
       "required": true
     },
     "ogrn": {
-      "type": "integer",
+      "type": "string",
       "required": true,
-      "min": 13,
-      "max": 13
+      "minLength": 13,
+      "maxLength": 13
     },
     "bik": {
-      "type": "integer",
+      "type": "string",
       "required": true,
-      "min": 9,
-      "max": 9
+      "minLength": 9,
+      "maxLength": 9
     },
     "correspondent_account": {
-      "type": "integer",
+      "type": "string",
       "required": true,
-      "min": 20,
-      "max": 20
+      "minLength": 20,
+      "maxLength": 20
     },
     "purpose_ru": {
       "type": "string",
@@ -63,10 +63,10 @@
       "maxLength": 210
     },
     "bank_account": {
-      "type": "integer",
+      "type": "string",
       "required": true,
-      "min": 20,
-      "max": 20
+      "minLength": 20,
+      "maxLength": 20
     }
   }
 }
