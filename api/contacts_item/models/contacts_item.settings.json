@@ -21,13 +21,11 @@
   "attributes": {
     "name_ru": {
       "type": "string",
-      "required": true,
-      "maxLength": 30
+      "required": true
     },
     "name_en": {
       "type": "string",
-      "required": true,
-      "maxLength": 30
+      "required": true
     },
     "position_ru": {
       "type": "string",

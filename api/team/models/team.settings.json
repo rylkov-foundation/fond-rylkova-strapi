@@ -13,13 +13,11 @@
   "attributes": {
     "title_ru": {
       "type": "string",
-      "required": true,
-      "maxLength": 12
+      "required": true
     },
     "title_en": {
       "type": "string",
-      "required": true,
-      "maxLength": 12
+      "required": true
     },
     "Keywords": {
       "type": "string",

@@ -18,12 +18,12 @@
     "amount_medium": {
       "type": "integer",
       "required": true,
-      "min": 100
+      "min": 50
     },
     "amount_big": {
       "type": "integer",
       "required": true,
-      "min": 500
+      "min": 50
     }
   }
 }
