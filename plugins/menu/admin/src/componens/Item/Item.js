@@ -184,7 +184,7 @@ const Item = ({
           value={fields.nameRU}
           onChange={handleOnChange}
           placeholder="Title_RU"
-          maxLength={20}
+          maxLength={subOf ? 24 : 20}
         />
         </FormLabel>
         <FormLabel>Название пункта меню (английский)
@@ -194,7 +194,7 @@ const Item = ({
             value={fields.nameEN}
             onChange={handleOnChange}
             placeholder="Title_EN"
-            maxLength={20}
+            maxLength={subOf ? 24 : 20}
           />
         </FormLabel>
         <FormLabel> Выберите нужную страницу для отображения
