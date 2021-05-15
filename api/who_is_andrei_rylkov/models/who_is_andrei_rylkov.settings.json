@@ -21,16 +21,6 @@
       "required": true,
       "maxLength": 24
     },
-    "image": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": true,
-      "pluginOptions": {}
-    },
     "content_ru": {
       "type": "richtext",
       "required": true
