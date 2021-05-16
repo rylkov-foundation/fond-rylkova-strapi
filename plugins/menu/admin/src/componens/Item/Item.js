@@ -9,7 +9,6 @@ const permanentPages = require('../../../../constants/permanentPages');
 const ItemElement = styled.li`
   display: flex;
   flex-direction: column;
-  width: 20vw;
   margin-bottom: 20px;
   
   &:last-of-type {
@@ -22,7 +21,7 @@ const EditForm = styled.form`
   flex-direction: column;
   overflow: hidden;
   transition: height .5s ease-out .2s;
-  height: ${props => props.opened ? '350px' : 0};
+  height: ${props => props.opened ? '250px' : 0};
 `;
 
 const FormLabel = styled.label`
@@ -57,11 +56,10 @@ const Face = styled.div`
   justify-content: flex-end;
   gap: 10px;
   overflow: hidden;
-  width: 20vw;
   height: ${props => props.hide ? 0 : '2vw'};
   transition: height .5s ease-out;
   border: darkgray solid 1px;
-  padding: 0 10px;
+  padding: 0 15px;
 `;
 
 const FaceName = styled.span`
@@ -124,11 +122,19 @@ const Item = ({
                 subOf,
                 handleDelete,
                 handleSubmit,
-                deleteNewItem
+                deleteNewItem,
+                setOpenedItemId,
+                openedItemId
 }) => {
   const [fields, setFields] = React.useState({ nameRU, nameEN, page, order });
   const [formOpened, setFormOpened] = React.useState(!nameRU && !nameEN && !page && !order);
   const [isSubmitButtonActive, setIsSubmitButtonActive] = React.useState(false);
+
+  React.useEffect(
+    () => {
+      if (openedItemId !== id) setFormOpened(false)
+    }, [openedItemId]
+  );
 
   React.useEffect(
     () => {
@@ -156,15 +162,16 @@ const Item = ({
     setFormOpened(false);
   }
 
-  function switchForm() {
-    setFormOpened(!formOpened);
+  function openForm() {
+    setOpenedItemId(id);
+    setFormOpened(true);
   }
 
   function closeForm() {
     if (isNewItem) {
       deleteNewItem(id, subOf);
     } else {
-      setFormOpened(!formOpened);
+      setFormOpened(false);
       setFields({ nameRU, nameEN, page, order });
     }
   }
@@ -173,7 +180,7 @@ const Item = ({
     <ItemElement>
       <Face hide={formOpened}>
         <FaceName>{fields.nameRU}</FaceName>
-        <FaceEditButton onClick={switchForm} />
+        <FaceEditButton onClick={openForm} />
         <FaceDeleteButton onClick={() => handleDelete(id, subOf)} />
       </Face>
       <EditForm opened={formOpened} onSubmit={handleEditButton}>
