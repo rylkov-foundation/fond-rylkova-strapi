@@ -141,7 +141,6 @@ const Item = ({
       if ((!fields.nameRU || !fields.nameEN || !fields.order) || (subOf && !fields.page)) {
         setIsSubmitButtonActive(false);
       } else {
-        console.log(subOf && !fields.page)
         setIsSubmitButtonActive(true);
       }
     },
