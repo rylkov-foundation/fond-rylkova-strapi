@@ -47,6 +47,9 @@
     "license_text_en": {
       "type": "text",
       "required": true
+    },
+    "year": {
+      "type": "integer"
     }
   }
 }
