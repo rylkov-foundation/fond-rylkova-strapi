@@ -138,9 +138,10 @@ const Item = ({
 
   React.useEffect(
     () => {
-      if (!fields.nameRU || !fields.nameEN || !fields.order) {
+      if ((!fields.nameRU || !fields.nameEN || !fields.order) || (subOf && !fields.page)) {
         setIsSubmitButtonActive(false);
       } else {
+        console.log(subOf && !fields.page)
         setIsSubmitButtonActive(true);
       }
     },
@@ -206,7 +207,7 @@ const Item = ({
         </FormLabel>
         <FormLabel> Выберите нужную страницу для отображения
           <FormSelect value={fields.page} onChange={handleOnChange} name="page">
-            <option value="" />
+            <option value=""/>
             <optgroup label='Уникальный макет'>
               {permanentPages.map(page =>
                 <option key={page} value={page}>
