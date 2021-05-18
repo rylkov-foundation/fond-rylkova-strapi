@@ -12,13 +12,11 @@
   "attributes": {
     "name_ru": {
       "type": "string",
-      "required": true,
-      "maxLength": 19
+      "required": true
     },
     "name_en": {
       "type": "string",
-      "required": true,
-      "maxLength": 19
+      "required": true
     },
     "photo": {
       "model": "file",

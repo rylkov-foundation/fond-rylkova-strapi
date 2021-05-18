@@ -14,7 +14,7 @@ const ListItemsElement = styled.ul`
 const Root = () => {
   const [items, setItems] = React.useState([]);
   const [pages, setPages] = React.useState([]);
-  const [isClosed, setIsClosed] = React.useState(true);
+  const [openedItemId, setOpenedItemId] = React.useState('');
 
   React.useEffect(
     () => {
@@ -51,19 +51,34 @@ const Root = () => {
     ;
   }
 
+  function deleteAllNewItemsAndSubitems() {
+    items.filter((item) => !item.newItem)
+    items.map((item) => {
+      const filteredItem = item;
+      item.subitems = item.subitems.filter((subitem) => !subitem.newItem)
+      return filteredItem;
+    })
+  }
+
   function handleAddItem() {
-    setItems([...items, { _id: String(Math.random() * (100 - 1) + 1), newItem: true }])
+    deleteAllNewItemsAndSubitems();
+    const newId = String(Math.random() * (100 - 1) + 1);
+    setOpenedItemId(newId);
+    setItems([...items, { _id: newId, newItem: true }])
   }
 
   function handleAddSubitem(itemId) {
+    deleteAllNewItemsAndSubitems();
     setItems(
       items.map((item) => {
         let editedItem = {};
         if (item._id === itemId) {
           editedItem = item;
+          const newId = String(Math.random() * (100 - 1) + 1);
+          setOpenedItemId(newId);
           editedItem.subitems = [
             ...editedItem.subitems,
-            { _id: String(Math.random() * (1000 - 1) + 1), newItem: true }
+            { _id: newId, newItem: true }
           ];
           return editedItem;
         } else {
@@ -109,7 +124,6 @@ const Root = () => {
   }
 
   function handleSubmitSubitemForm(id, fields, url, isNewItem, parent) {
-    console.log(url)
     if (isNewItem) {
       const parentSubitems = items
         .find((item) => item._id === parent).subitems
@@ -187,8 +201,9 @@ const Root = () => {
             order={Number(item.order)  || 0}
             handleDelete={handleDeleteItem}
             handleSubmit={handleSubmitItemForm}
-            setIsClosed = {setIsClosed}
             deleteNewItem={deleteNewItem}
+            setOpenedItemId={setOpenedItemId}
+            openedItemId={openedItemId}
           >
           {(item.subitems && item.subitems.length) ?
             <ListItemsElement sub>
@@ -205,15 +220,16 @@ const Root = () => {
                   order={Number(subitem.order) || 0}
                   handleDelete={handleDeleteSubitem}
                   handleSubmit={handleSubmitSubitemForm}
-                  setIsClosed={setIsClosed}
                   deleteNewItem={deleteNewItem}
+                  setOpenedItemId={setOpenedItemId}
+                  openedItemId={openedItemId}
                 />
               )}
             </ListItemsElement> : ''}
-          <AddItemButton onClick={() => handleAddSubitem(item._id)} sub isClosed={isClosed}/>
+          <AddItemButton onClick={() => handleAddSubitem(item._id)} sub />
         </Item>) : ''}
       </ListItemsElement>
-      <AddItemButton onClick={handleAddItem} isClosed={isClosed}/>
+      <AddItemButton onClick={handleAddItem} />
     </>
   );
 }

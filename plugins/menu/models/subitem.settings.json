@@ -23,27 +23,25 @@
       "type": "string",
       "required": true,
       "minLength": 1,
-      "maxLength": 25
+      "maxLength": 24
     },
     "name_en": {
       "type": "string",
       "required": true,
       "minLength": 1,
-      "maxLength": 25
+      "maxLength": 24
     },
     "pageDataPath": {
       "type": "string",
-      "required": false,
-      "unique": true
+      "required": false
     },
     "url": {
       "type": "string",
-      "required": false,
-      "unique": true
+      "required": false
     },
     "order": {
       "type": "integer",
-      "min": 0,
+      "min": 1,
       "max": 30,
       "required": true
     }

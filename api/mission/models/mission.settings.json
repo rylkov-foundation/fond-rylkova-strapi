@@ -13,13 +13,11 @@
   "attributes": {
     "title_ru": {
       "type": "string",
-      "required": true,
-      "maxLength": 5
+      "required": true
     },
     "title_en": {
       "type": "string",
-      "required": true,
-      "maxLength": 5
+      "required": true
     },
     "content_ru": {
       "type": "richtext",
@@ -40,6 +38,18 @@
     "og_description": {
       "type": "string",
       "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }
