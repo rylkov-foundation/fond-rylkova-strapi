@@ -32,7 +32,7 @@ const FormLabel = styled.label`
 
 const EditFormField = styled.input`
   background: aliceblue;
-  height: 2vw;
+  height: 25px;
   margin-bottom: 10px;
   
   &:focus {
@@ -48,7 +48,7 @@ const EditFormField = styled.input`
 
 const FormSelect = styled.select `
   background: aliceblue;
-  height: 2vw;
+  height: 25px;
 `
 
 const Face = styled.div`
