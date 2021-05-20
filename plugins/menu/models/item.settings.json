@@ -48,8 +48,7 @@
     "subitems": {
       "plugin": "menu",
       "collection": "subitem",
-      "required": false,
-      "unique": true
+      "required": false
     }
   }
 }
