@@ -22,22 +22,20 @@
     "title_ru": {
       "type": "string",
       "required": true,
-      "maxLength": 15
+      "maxLength": 20
     },
     "title_en": {
       "type": "string",
       "required": true,
-      "maxLength": 15
+      "maxLength": 20
     },
     "description_ru": {
       "type": "text",
-      "required": true,
-      "maxLength": 385
+      "required": true
     },
     "description_en": {
       "type": "text",
-      "required": true,
-      "maxLength": 385
+      "required": true
     }
   }
 }
