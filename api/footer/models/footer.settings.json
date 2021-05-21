@@ -48,6 +48,12 @@
       "type": "text",
       "required": true
     },
+    "link_text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
     "year": {
       "type": "integer"
     }
