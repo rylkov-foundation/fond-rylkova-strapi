@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "team_member",
   "info": {
-    "name": "Team member"
+    "name": "Team member",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -37,6 +38,12 @@
       "type": "text",
       "required": true,
       "maxLength": 320
+    },
+    "surname_ru": {
+      "type": "string"
+    },
+    "surname_en": {
+      "type": "string"
     }
   }
 }
