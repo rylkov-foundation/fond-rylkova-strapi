@@ -19,6 +19,14 @@
       "type": "string",
       "required": true
     },
+    "surname_ru": {
+      "type": "string",
+      "required": true
+    },
+    "surname_en": {
+      "type": "string",
+      "required": true
+    },
     "photo": {
       "model": "file",
       "via": "related",
@@ -38,12 +46,6 @@
       "type": "text",
       "required": true,
       "maxLength": 320
-    },
-    "surname_ru": {
-      "type": "string"
-    },
-    "surname_en": {
-      "type": "string"
     }
   }
 }
