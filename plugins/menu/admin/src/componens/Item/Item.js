@@ -138,11 +138,7 @@ const Item = ({
 
   React.useEffect(
     () => {
-      if ((!fields.nameRU || !fields.nameEN || !fields.order) || (subOf && !fields.page)) {
-        setIsSubmitButtonActive(false);
-      } else {
-        setIsSubmitButtonActive(true);
-      }
+      setIsSubmitButtonActive(!((!fields.nameRU || !fields.nameEN || !fields.order) || (subOf && !fields.page)));
     },
     [fields]
   );
