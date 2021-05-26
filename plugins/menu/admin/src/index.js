@@ -7,8 +7,7 @@ import trads from './translations';
 
 export default strapi => {
   const pluginDescription = pluginPkg.strapi.description || pluginPkg.description;
-  const icon = pluginPkg.strapi.icon;
-  const name = pluginPkg.strapi.name;
+  const { icon, name } = pluginPkg.strapi
 
   const plugin = {
     blockerComponent: null,
