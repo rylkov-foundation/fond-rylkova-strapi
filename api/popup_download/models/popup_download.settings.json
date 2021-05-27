@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "popup_download",
+  "info": {
+    "name": "Popup download"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true,
+      "maxLength": 135
+    },
+    "description_en": {
+      "type": "text",
+      "required": true,
+      "maxLength": 135
+    }
+  }
+}

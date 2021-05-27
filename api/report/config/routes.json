@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/reports",
+      "handler": "report.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

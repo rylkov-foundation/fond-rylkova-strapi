@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_our_results",
+  "info": {
+    "name": "Main our results",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true
+    },
+    "title_en": {
+      "type": "string",
+      "required": true
+    },
+    "main_results": {
+      "collection": "main_result"
+    }
+  }
+}

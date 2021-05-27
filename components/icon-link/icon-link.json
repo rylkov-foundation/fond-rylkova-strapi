@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_icon_link_icon_links",
+  "info": {
+    "name": "Icon link",
+    "icon": "users",
+    "description": ""
+  },
+  "options": {
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
+  },
+  "attributes": {
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

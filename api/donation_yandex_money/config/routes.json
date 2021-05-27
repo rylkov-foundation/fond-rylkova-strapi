@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/donation_yandex_money",
+      "handler": "donation_yandex_money.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

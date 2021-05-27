@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "donation_amount",
+  "info": {
+    "name": "Donation amount"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "amount_small": {
+      "type": "integer",
+      "required": true,
+      "min": 50
+    },
+    "amount_medium": {
+      "type": "integer",
+      "required": true,
+      "min": 50
+    },
+    "amount_big": {
+      "type": "integer",
+      "required": true,
+      "min": 50
+    }
+  }
+}

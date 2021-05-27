@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "donation_globalgiving",
+  "info": {
+    "name": "Donation globalgiving"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 12
+    },
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 12
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true,
+      "maxLength": 450
+    },
+    "description_en": {
+      "type": "text",
+      "required": true,
+      "maxLength": 450
+    }
+  }
+}

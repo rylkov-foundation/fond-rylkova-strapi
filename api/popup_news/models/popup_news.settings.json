@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "popup_news",
+  "info": {
+    "name": "Popup news"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true,
+      "maxLength": 100
+    },
+    "description_en": {
+      "type": "text",
+      "required": true,
+      "maxLength": 100
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

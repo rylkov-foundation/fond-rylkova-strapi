@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/donation_page",
+      "handler": "donation.page",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/donation",
+      "handler": "donation.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

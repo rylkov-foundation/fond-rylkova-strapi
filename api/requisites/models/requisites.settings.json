@@ -1,0 +1,72 @@
+{
+  "kind": "singleType",
+  "collectionName": "requisites",
+  "info": {
+    "name": "Requisites"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "company_name": {
+      "type": "string",
+      "required": true
+    },
+    "company_short_name": {
+      "type": "string",
+      "required": true
+    },
+    "inn": {
+      "type": "string",
+      "required": true,
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "kpp": {
+      "type": "string",
+      "required": true,
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "bank": {
+      "type": "string",
+      "required": true
+    },
+    "ogrn": {
+      "type": "string",
+      "required": true,
+      "minLength": 13,
+      "maxLength": 13
+    },
+    "bik": {
+      "type": "string",
+      "required": true,
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "correspondent_account": {
+      "type": "string",
+      "required": true,
+      "minLength": 20,
+      "maxLength": 20
+    },
+    "purpose_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 210
+    },
+    "purpose_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 210
+    },
+    "bank_account": {
+      "type": "string",
+      "required": true,
+      "minLength": 20,
+      "maxLength": 20
+    }
+  }
+}

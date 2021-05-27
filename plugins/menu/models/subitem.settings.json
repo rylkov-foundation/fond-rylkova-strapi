@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subitems",
+  "info": {
+    "name": "MenuSubitem",
+    "description": "Items of one of root item"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
+  },
+  "attributes": {
+    "name_ru": {
+      "type": "string",
+      "required": true,
+      "minLength": 1,
+      "maxLength": 24
+    },
+    "name_en": {
+      "type": "string",
+      "required": true,
+      "minLength": 1,
+      "maxLength": 24
+    },
+    "pageDataPath": {
+      "type": "string",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    },
+    "order": {
+      "type": "integer",
+      "min": 1,
+      "max": 30,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_donate",
+  "info": {
+    "name": "Main donate"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 15
+    },
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 15
+    }
+  }
+}

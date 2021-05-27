@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_helps",
+  "info": {
+    "name": "Main help",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 15
+    },
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 15
+    },
+    "phone_number": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true,
+      "maxLength": 165
+    },
+    "description_en": {
+      "type": "text",
+      "required": true,
+      "maxLength": 165
+    }
+  }
+}

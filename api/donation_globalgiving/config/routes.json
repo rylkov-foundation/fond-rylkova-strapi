@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/donation_globalgiving",
+      "handler": "donation_globalgiving.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

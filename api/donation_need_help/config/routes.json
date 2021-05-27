@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/donation_need_help",
+      "handler": "donation_need_help.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

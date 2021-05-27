@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "donation_yandex_money",
+  "info": {
+    "name": "Donation yandex money"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 13
+    },
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 13
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true,
+      "maxLength": 169
+    },
+    "description_en": {
+      "type": "text",
+      "required": true,
+      "maxLength": 169
+    }
+  }
+}

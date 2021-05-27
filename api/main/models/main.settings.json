@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "main",
+  "info": {
+    "name": "Main"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 82
+    },
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 82
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true,
+      "maxLength": 110
+    },
+    "description_en": {
+      "type": "text",
+      "required": true,
+      "maxLength": 110
+    }
+  }
+}

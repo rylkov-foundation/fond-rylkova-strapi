@@ -1,0 +1,45 @@
+{
+  "name": "fond-rylkova-strapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "far",
+  "scripts": {
+    "develop": "strapi develop --watch-admin",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "husky": "^6.0.0"
+  },
+  "dependencies": {
+    "node": "^14.16.1",
+    "npm": "^6.14.13",
+    "slugify": "^1.5.3",
+    "strapi": "3.6.2",
+    "strapi-admin": "3.6.2",
+    "strapi-connector-mongoose": "^3.6.2",
+    "strapi-plugin-ckeditor5": "^1.11.0",
+    "strapi-plugin-content-manager": "3.6.2",
+    "strapi-plugin-content-type-builder": "3.6.2",
+    "strapi-plugin-email": "3.6.2",
+    "strapi-plugin-upload": "3.6.2",
+    "strapi-plugin-users-permissions": "3.6.2",
+    "strapi-utils": "3.6.2"
+  },
+  "author": {
+    "name": "FreeBeeGo",
+    "email": "freebeego@yandex.ru"
+  },
+  "strapi": {
+    "uuid": "d477fbd8-e95f-4d26-835c-70b44858b609"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^6.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/main_help",
+      "handler": "main_help.find",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

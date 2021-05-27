@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_result",
+  "info": {
+    "name": "Main result",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true,
+    "privateAttributes": [
+      "createdAt",
+      "updatedAt",
+      "published_at",
+      "id",
+      "_id",
+      "__v"
+    ]
+  },
+  "attributes": {
+    "title_ru": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "description_ru": {
+      "type": "text",
+      "required": true,
+      "maxLength": 135
+    },
+    "description_en": {
+      "type": "text",
+      "required": true,
+      "maxLength": 135
+    },
+    "quantity": {
+      "required": true,
+      "type": "integer"
+    }
+  }
+}
