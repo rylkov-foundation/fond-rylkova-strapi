@@ -30,14 +30,12 @@
       "maxLength": 40
     },
     "description_ru": {
-      "type": "text",
-      "required": true,
-      "maxLength": 135
+      "type": "richtext",
+      "required": true
     },
     "description_en": {
-      "type": "text",
-      "required": true,
-      "maxLength": 135
+      "type": "richtext",
+      "required": true
     },
     "quantity": {
       "required": true,

@@ -21,14 +21,13 @@
       "maxLength": 18
     },
     "description_ru": {
-      "type": "text",
+      "type": "richtext",
       "required": true,
       "maxLength": 35
     },
     "description_en": {
-      "type": "text",
-      "required": true,
-      "maxLength": 35
+      "type": "richtext",
+      "required": true
     }
   }
 }

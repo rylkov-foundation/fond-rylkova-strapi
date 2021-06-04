@@ -210,13 +210,13 @@ const Item = ({
                 </option>
               )}
             </optgroup>
-            {pages.map(page =>
-              <optgroup key={page._id} label='Метамакет'>
-                <option value={page._id}>
+            <optgroup label='Метамакет'>
+              {pages.map(page =>
+                <option key={page._id} value={page._id}>
                   {page.title_ru}
                 </option>
-              </optgroup>
-            )}
+              )}
+            </optgroup>
           </FormSelect>
         </FormLabel>
         <FormLabel> Номер для сортировки

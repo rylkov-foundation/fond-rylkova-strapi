@@ -22,13 +22,11 @@
     },
     "description_ru": {
       "type": "text",
-      "required": true,
-      "maxLength": 110
+      "required": true
     },
     "description_en": {
       "type": "text",
-      "required": true,
-      "maxLength": 110
+      "required": true
     }
   }
 }
