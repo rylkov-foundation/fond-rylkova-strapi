@@ -29,6 +29,14 @@
     },
     "main_results": {
       "collection": "main_result"
+    },
+    "link_name": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
     }
   }
 }

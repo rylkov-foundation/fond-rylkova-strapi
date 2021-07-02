@@ -2,7 +2,7 @@
   "kind": "singleType",
   "collectionName": "donation_amount",
   "info": {
-    "name": "Donation amount"
+    "name": "Donation amount and links"
   },
   "options": {
     "increments": true,
@@ -24,6 +24,14 @@
       "type": "integer",
       "required": true,
       "min": 50
+    },
+    "offer": {
+      "type": "string",
+      "required": true
+    },
+    "policy_link": {
+      "type": "string",
+      "required": true
     }
   }
 }
