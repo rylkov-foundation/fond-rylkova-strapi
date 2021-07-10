@@ -27,6 +27,22 @@
     "description_en": {
       "type": "text",
       "required": true
+    },
+    "first_link_name": {
+      "type": "string",
+      "required": true
+    },
+    "second_link_name": {
+      "type": "string",
+      "required": true
+    },
+    "first_link": {
+      "type": "string",
+      "required": true
+    },
+    "second_link": {
+      "type": "string",
+      "required": true
     }
   }
 }

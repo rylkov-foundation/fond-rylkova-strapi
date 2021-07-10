@@ -44,6 +44,14 @@
     "description_en": {
       "type": "richtext",
       "required": true
+    },
+    "link_name": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
     }
   }
 }
