@@ -32,11 +32,11 @@ export default strapi => {
           icon,
           label: {
             id: `${pluginId}.plugin.name`,
-            defaultMessage: name,
+            defaultMessage: 'Menu',
           },
           name,
           permissions: [
-            { action: 'plugins::content-type-builder.read', subject: null }
+            { action: 'plugins::menu.read', subject: null }
             /*{
               action: 'plugins::menu.find', // the action name should be plugins::plugin-name.actionType
               subject: null,

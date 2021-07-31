@@ -22,13 +22,27 @@
     },
     "description_ru": {
       "type": "text",
-      "required": true,
-      "maxLength": 110
+      "required": true
     },
     "description_en": {
       "type": "text",
-      "required": true,
-      "maxLength": 110
+      "required": true
+    },
+    "first_link_name": {
+      "type": "string",
+      "required": true
+    },
+    "second_link_name": {
+      "type": "string",
+      "required": true
+    },
+    "first_link": {
+      "type": "string",
+      "required": true
+    },
+    "second_link": {
+      "type": "string",
+      "required": true
     }
   }
 }

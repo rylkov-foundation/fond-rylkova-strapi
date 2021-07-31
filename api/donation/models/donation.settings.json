@@ -19,11 +19,11 @@
       "required": true
     },
     "description_ru": {
-      "type": "text",
+      "type": "richtext",
       "required": true
     },
     "description_en": {
-      "type": "text",
+      "type": "richtext",
       "required": true
     },
     "Keywords": {

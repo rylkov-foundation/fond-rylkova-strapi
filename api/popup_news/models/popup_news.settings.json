@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "popup_news",
   "info": {
-    "name": "Popup news"
+    "name": "Popup news",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -21,17 +22,27 @@
       "maxLength": 20
     },
     "description_ru": {
-      "type": "text",
-      "required": true,
-      "maxLength": 100
+      "type": "richtext",
+      "required": true
     },
     "description_en": {
-      "type": "text",
-      "required": true,
-      "maxLength": 100
+      "type": "richtext",
+      "required": true
+    },
+    "button_text_ru": {
+      "type": "string",
+      "required": true
+    },
+    "button_text_en": {
+      "type": "string",
+      "required": true
     },
     "link": {
       "type": "string",
+      "required": false
+    },
+    "newsId": {
+      "type": "uid",
       "required": true
     }
   }

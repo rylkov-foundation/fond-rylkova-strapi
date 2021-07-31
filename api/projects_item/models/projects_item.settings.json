@@ -31,14 +31,12 @@
       "pluginOptions": {}
     },
     "description_ru": {
-      "type": "text",
-      "required": true,
-      "maxLength": 242
+      "type": "richtext",
+      "required": true
     },
     "description_en": {
-      "type": "text",
-      "required": true,
-      "maxLength": 242
+      "type": "richtext",
+      "required": true
     },
     "date_ru": {
       "type": "string",
