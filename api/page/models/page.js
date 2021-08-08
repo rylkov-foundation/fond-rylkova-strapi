@@ -16,6 +16,8 @@ module.exports = {
     },
     afterUpdate: async (result) => {
       const AUTHOR = 'strapi-author'
+      const EDITOR = 'strapi-editor'
+
       const roles = (
         await strapi.query('role', 'admin').find({})
       )
@@ -24,8 +26,14 @@ module.exports = {
           {}
         )
       const documentCreatorRoles = result.created_by.roles.map((role) => role.toString())
+
+      const administrators = await strapi.query('user', 'admin').find({})
+      const firstEditor = administrators.find(
+        (user) => user.roles.some((role) => roles[role.id] === EDITOR)
+      )
+
       if (
-        result.published_at &&
+        result['published_at'] &&
         documentCreatorRoles.some((role) => roles[role] === AUTHOR)
       ) {
         await strapi
@@ -33,7 +41,7 @@ module.exports = {
           .model
           .updateOne(
             { _id: result.id },
-            { created_by: result.updated_by.id.toString() }
+            { created_by: firstEditor.id.toString() }
           )
       }
     }
